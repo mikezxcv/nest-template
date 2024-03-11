@@ -31,5 +31,7 @@ async function bootstrap() {
   app.setGlobalPrefix(basePath);
   await app.listen(port, host);
   logger.log(`Application is running on: http://${host}:${port}/${basePath}`);
+  logger.log(`Swagger is running on: http://${host}:${port}/docs`);
+  logger.log('Json Swagger Documentation at http://localhost:3010/docs-json');
 }
 bootstrap();

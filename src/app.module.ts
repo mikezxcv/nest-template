@@ -10,24 +10,25 @@ import { ScheduleModule } from '@nestjs/schedule';
 import { ExternalApiModule } from './modules/external-api/external-api.module';
 import { MailModule } from './modules/mail/mail.module';
 import { BitacoraLogsModule } from './modules/bitacora-logs/bitacora-logs.module';
-
+import {SalesModule} from './modules/sales/sales.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
     }),
-    // TypeOrmModule.forRootAsync({
-    //   imports: [ConfigModule],
-    //   inject: [ConfigService],
-    //   useFactory: async (configService: ConfigService) =>
-    //     databaseConfig(configService),
-    // }),
+    TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: async (configService: ConfigService) =>
+        databaseConfig(configService),
+    }),
     ScheduleModule.forRoot(),
-    // AuthenticationModule,
+    AuthenticationModule,
     TasksModule,
     ExternalApiModule,
     MailModule,
     BitacoraLogsModule,
+    SalesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
