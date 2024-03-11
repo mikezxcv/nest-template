@@ -1,0 +1,31 @@
+export class PaymentRetentionWorkDto {
+  nombreEmpresa: string;
+  codsucursal: number;
+  nombreSucursal: string;
+  codproyecto: number;
+  nombreProyecto: string;
+  fechaODT: string;
+  correlativo: number;
+  descripcionPlanilla: string;
+  fechaPlanilla: string;
+  fechaDesde: string;
+  fechaHasta: string;
+  numeroLinea: number;
+  numeroODT: string;
+  codempleado: string;
+  nombreEmpleado: string;
+  planilla: number;
+  anio: number;
+  descripcionLinea: string;
+  cantidad: number;
+  precio: number;
+  subtotalRedondeado: number;
+  subtotal: string;
+  poligono: string;
+  lote: string;
+  casa: string;
+  codobra: string;
+  montoRetenido: number;
+  cancelada: string;
+  unidadMedida: string;
+}
