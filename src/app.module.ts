@@ -16,18 +16,18 @@ import { BitacoraLogsModule } from './modules/bitacora-logs/bitacora-logs.module
     ConfigModule.forRoot({
       isGlobal: true,
     }),
-    // TypeOrmModule.forRootAsync({
-    //   imports: [ConfigModule],
-    //   inject: [ConfigService],
-    //   useFactory: async (configService: ConfigService) =>
-    //     databaseConfig(configService),
-    // }),
-    ScheduleModule.forRoot(),
-    // AuthenticationModule,
-    TasksModule,
-    ExternalApiModule,
-    MailModule,
-    BitacoraLogsModule,
+    TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: async (configService: ConfigService) =>
+        databaseConfig(configService),
+    }),
+    // ScheduleModule.forRoot(),
+    AuthenticationModule,
+    // TasksModule,
+    // ExternalApiModule,
+    // MailModule,
+    // BitacoraLogsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
